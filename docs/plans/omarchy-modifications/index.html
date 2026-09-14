@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Ralph's Omarchy modifications, upstream contributions, and restore coverage. Verified September 14, 2026.">
+  <title>My Omarchy modifications · Ralph Smith</title>
+  <style>
+    :root { color-scheme: dark; --bg:#111416; --panel:#191e21; --text:#eef0ed; --muted:#abb5b8; --line:#343d41; --accent:#b6df99; --link:#b8d8ef; }
+    * { box-sizing:border-box; }
+    html { scroll-padding-top:24px; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:860px; margin:auto; padding:64px 28px 48px; }
+    a { color:var(--link); text-underline-offset:4px; }
+    a:hover { color:white; }
+    a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+    .eyebrow { color:var(--accent); font-size:12px; letter-spacing:.13em; text-transform:uppercase; font-weight:700; }
+    h1 { font-size:clamp(36px,7vw,58px); line-height:1.08; letter-spacing:-.045em; max-width:680px; margin:18px 0 24px; }
+    .intro { font-size:19px; max-width:630px; color:var(--muted); }
+    .meta { font-size:13px; color:var(--muted); margin-top:24px; }
+    nav { display:flex; flex-wrap:wrap; gap:12px 24px; border-block:1px solid var(--line); margin:30px 0; padding:16px 0; font-size:14px; }
+    nav a { color:var(--text); text-decoration:none; }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:28px 0 46px; }
+    .stat { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px; }
+    .stat strong { display:block; font-size:32px; line-height:1.2; font-weight:600; }
+    .stat span { display:block; color:var(--muted); font-size:13px; margin-top:7px; }
+    section { margin:48px 0; }
+    h2 { font-size:26px; line-height:1.3; letter-spacing:-.025em; margin:0 0 12px; }
+    h3 { font-size:18px; line-height:1.4; margin:0 0 8px; font-weight:600; }
+    p { margin:0 0 14px; }
+    .section-note { color:var(--muted); font-size:14px; margin-bottom:24px; }
+    .contribution { border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:24px; margin:14px 0; }
+    .contribution .topline { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; }
+    .badge { display:inline-block; border-radius:5px; padding:3px 8px; font-size:11px; letter-spacing:.045em; text-transform:uppercase; font-weight:700; }
+    .open { color:#c2e8a9; background:#29382a; }
+    .merged { color:#d5c7f3; background:#352d44; }
+    .local { color:#edcf9d; background:#3b3325; }
+    .repo { font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; color:var(--muted); }
+    .contribution p:last-child { margin-bottom:0; }
+    .detail { color:var(--muted); font-size:14px; }
+    .changes { counter-reset:change; }
+    .change { display:grid; grid-template-columns:36px minmax(0,1fr); gap:12px; padding:23px 0; border-top:1px solid var(--line); }
+    .change::before { counter-increment:change; content:counter(change,decimal-leading-zero); color:var(--accent); font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace; padding-top:2px; }
+    .change p { color:var(--muted); margin-bottom:10px; }
+    .change p:last-child { margin-bottom:0; }
+    code { font: .86em/1.6 ui-monospace,SFMono-Regular,Consolas,monospace; background:#242b30; border-radius:4px; padding:2px 5px; overflow-wrap:anywhere; }
+    .source { font-size:12px; }
+    .coverage { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .coverage > div { padding:22px; border:1px solid var(--line); border-radius:10px; }
+    ul { padding-left:20px; margin:10px 0 0; color:var(--muted); }
+    li { margin-bottom:7px; }
+    .note { border-left:3px solid var(--accent); padding:4px 0 4px 18px; color:var(--muted); font-size:14px; margin-top:22px; }
+    footer { border-top:1px solid var(--line); padding-top:24px; color:var(--muted); font-size:12px; }
+    @media(max-width:540px) { main { padding:36px 20px; } .stats { gap:8px; } .stat { padding:13px 10px; } .stat strong { font-size:26px; } .coverage { grid-template-columns:1fr; } .contribution { padding:19px; } .change { grid-template-columns:26px minmax(0,1fr); gap:10px; } }
+    @media print { :root { color-scheme:light; --bg:#fff; --panel:#fff; --text:#111; --muted:#444; --line:#ccc; --accent:#285524; --link:#174f78; } main { max-width:none; padding:0; } nav { display:none; } .contribution,.change,.coverage > div { break-inside:avoid; } code { background:#eee; } .badge { color:#111; background:#eee; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Personal desktop / Reference</div>
+    <h1>My Omarchy<br>modifications</h1>
+    <p class="intro">The changes to my desktop, the work shared upstream, and what I can restore on another machine.</p>
+    <p class="meta">Ralph Smith · GitHub: <a href="https://github.com/ralphsmith80">ralphsmith80</a><br>Verified <time datetime="2026-09-14">September 14, 2026</time>. PR statuses are a dated snapshot.</p>
+  </header>
+
+  <nav aria-label="On this page">
+    <a href="#contributions">PRs &amp; discussion</a>
+    <a href="#modifications">Desktop changes</a>
+    <a href="#restore">Restore coverage</a>
+    <a href="#sources">Sources</a>
+  </nav>
+
+  <div class="stats" aria-label="Inventory totals">
+    <div class="stat"><strong>11</strong><span>Modification areas</span></div>
+    <div class="stat"><strong>1</strong><span>Upstream PR, open</span></div>
+    <div class="stat"><strong>1</strong><span>Related dotfiles PR, merged</span></div>
+  </div>
+
+  <section id="contributions">
+    <h2>PRs &amp; upstream discussion</h2>
+    <p class="section-note">Omarchy now lives at <a href="https://github.com/omacom/omarchy">omacom/omarchy</a>. One upstream PR was found under my GitHub account.</p>
+
+    <article class="contribution">
+      <div class="topline"><span class="badge open">Open</span><span class="repo">omacom/omarchy · #11685</span></div>
+      <h3><a href="https://github.com/omacom/omarchy/pull/11685">Keypad workspace switching and window movement</a></h3>
+      <p>Adds keypad shortcuts for workspaces 1–10. Move a window and follow it, or add Alt to move it without following. Both Num Lock states work.</p>
+      <p class="detail">Created September 13, 2026. Includes two commits and hotkey documentation.</p>
+    </article>
+
+    <article class="contribution">
+      <div class="topline"><span class="badge merged">Merged</span><span class="repo">ralphsmith80/dotfiles · #20</span></div>
+      <h3><a href="https://github.com/ralphsmith80/dotfiles/pull/20">Restore personal Omarchy overrides safely</a></h3>
+      <p>Adds a separate restore command for tiling, keypad shortcuts, dictation, and optional monitor settings. Includes a verified plugin build, preview, backups, and rollback.</p>
+      <p class="detail">A contribution to my dotfiles repository. This is not an upstream Omarchy PR.</p>
+    </article>
+
+    <article class="contribution">
+      <div class="topline"><span class="badge local">Local implementation</span><span class="repo">omacom/omarchy · Discussion #2848</span></div>
+      <h3><a href="https://github.com/omacom/omarchy/discussions/2848#discussioncomment-18426635">Password-protected screensaver</a></h3>
+      <p>Built and installed a screensaver mode inside the protected session lock. Shared the implementation and verification results in the upstream discussion.</p>
+      <p class="detail">The PR was deferred to coordinate with overlapping lock and idle work in <a href="https://github.com/omacom/omarchy/pull/11746">#11746</a>. My work remains on the local <code>feat/secure-screensaver</code> branch.</p>
+      <p class="detail"><a href="https://tz58qsp5kuvf.postplan.dev">Open the screensaver review page</a></p>
+    </article>
+  </section>
+
+  <section id="modifications">
+    <h2>Desktop changes</h2>
+    <p class="section-note">Grouped by purpose. Several areas share the same configuration or implementation.</p>
+    <div class="changes">
+      <article class="change"><div>
+        <h3>Equal window tiling</h3>
+        <p>A patched hy3 layout keeps sibling windows equally sized. It rebalances when windows open, close, move between workspaces, or when the active workspace changes.</p>
+        <p>A Hyprland version guard falls back to the stock layout if the plugin build does not match the running compositor.</p>
+        <p class="source">Saved source: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/hy3.patch">hy3.patch</a> and <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/config/hypr/dotfiles.lua">dotfiles.lua</a></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>COSMIC-style directional movement</h3>
+        <p><code>Super+Shift+arrows</code> moves the focused window through tiling groups. Each press moves through one group relationship, with equal sizing afterward.</p>
+        <p><code>Super+arrows</code> focuses windows. <code>Super+T</code> toggles floating and tiling. <code>Super+L</code> switches between hy3 and scrolling. The old <code>Super+J</code> arrangement shortcut is removed.</p>
+        <p class="source">Local notes: <code>~/.config/hypr/equal-tiling-README.md</code></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Keypad workspace shortcuts</h3>
+        <p><code>Super+keypad</code> switches workspaces. Add Shift to move the focused window and follow it. Add Shift and Alt to move it without following.</p>
+        <p>Keypad 1–9 selects workspaces 1–9; keypad 0 selects workspace 10. Both Num Lock states are supported.</p>
+        <p class="source">Upstream: <a href="https://github.com/omacom/omarchy/pull/11685">PR #11685</a></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Right Alt push-to-talk dictation</h3>
+        <p>Hold Right Alt to record with Voxtype, then release to transcribe. Uses the English <code>base.en</code> model, pauses media, and types the result with clipboard fallback.</p>
+        <p>Recordings can run for up to 120 seconds. Recording and transcription notifications are disabled.</p>
+        <p class="source">Saved source: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/config/voxtype/config.toml">Voxtype configuration</a></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Samsung ultrawide display setup</h3>
+        <p>The Odyssey G95NC is configured for 7680×2160 at 240 Hz, with 1.2 desktop scaling and <code>GDK_SCALE=1</code>. It is matched by monitor description.</p>
+        <p>The portable restore makes this hardware configuration optional.</p>
+        <p class="source">Saved source: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/config/hypr/monitors.lua">monitors.lua</a></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Custom display panel</h3>
+        <p>Cloned the stock monitor widget as <code>agentsmith1337.monitor</code>, named “My Display.” Added a 1.2 scaling preset and wrapped scale buttons into rows of at most five.</p>
+        <p>The panel scrolls to keep the selected scale button visible during keyboard navigation.</p>
+        <p class="source">Local source: <code>~/.config/omarchy/plugins/agentsmith1337.monitor/Panel.qml</code></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Bar configuration</h3>
+        <p>Added the third-party <code>crmne.hyprmoncfg</code> display configuration widget and the stock Tailscale widget. Replaced the stock monitor widget with “My Display.”</p>
+        <p class="source">Local configuration: <code>~/.config/omarchy/shell.json</code></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Penguin themes and wallpapers</h3>
+        <p>Added <code>cyberpunk-penguin-analytics-4k</code> and <code>cyberpunk-penguin-analytics-copper-4k</code>. Both theme folders contain a palette and wallpaper.</p>
+        <p>Wallpaper copies are also available under Last Horizon. The two saved theme palettes currently match; the copper variant changes the artwork.</p>
+        <p class="source">Local assets: <code>~/.config/omarchy/themes/</code> and <code>~/.config/omarchy/backgrounds/last-horizon/</code></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Quant Alchemy Observatory screensaver</h3>
+        <p>Built a native animated screensaver with the Quant Alchemy mark, copper rings, particles, a clock, and a synthetic chart. The renderer targets 30 frames per second.</p>
+        <p>Updated rendering to the display’s full 7680×2160 resolution. The artwork is stored locally and needs no network connection at runtime.</p>
+        <p class="source">Local project: <code>~/Work/quantalchemy-screensaver/</code> · <a href="https://tz58qsp5kuvf.postplan.dev">Visual reference</a></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Password-protected screensaver integration</h3>
+        <p>Added <code>omarchy system lock --screensaver</code>, personal lock and idle plugins, and launcher overrides. The animation runs inside the protected lock surface while the displays stay on.</p>
+        <p>A key reveals the password prompt without entering that wake key as a password character. After five seconds without input, the prompt returns to the animation. Normal locking retains its display blanking behavior.</p>
+        <p>The implementation supports optional QML artwork and a theme-background fallback, including video. The custom renderer unloads while the password prompt is visible.</p>
+        <p class="source">Local project: <code>~/Work/omarchy-secure-screensaver/</code> · <a href="https://github.com/omacom/omarchy/discussions/2848#discussioncomment-18426635">Implementation and test results</a></p>
+      </div></article>
+      <article class="change"><div>
+        <h3>Portable Omarchy restore</h3>
+        <p>Added <code>python3 script/omarchy.py</code> as a separate restore command. Preview is the default; <code>--apply</code> installs the saved overrides and <code>--with-hardware</code> includes monitor settings.</p>
+        <p><code>--build</code> downloads a pinned hy3 source revision, verifies its checksum, applies the patch, and compiles against local Hyprland headers. Restore includes backups, rollback, and checks for later local edits.</p>
+        <p class="source">Documentation: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/README.md">Personal Omarchy changes</a></p>
+      </div></article>
+    </div>
+  </section>
+
+  <section id="restore">
+    <h2>What the restore covers</h2>
+    <p class="section-note">The dotfiles command restores a subset of this inventory.</p>
+    <div class="coverage">
+      <div><h3>Saved in the restore</h3><ul>
+        <li>Equal tiling and the hy3 source patch</li>
+        <li>Directional movement and keypad shortcuts</li>
+        <li>Right Alt binding and Voxtype configuration</li>
+        <li>Optional Samsung monitor settings</li>
+      </ul></div>
+      <div><h3>Separate local setup</h3><ul>
+        <li>Themes and wallpapers</li>
+        <li>Bar layout and display plugins</li>
+        <li>Observatory artwork and native renderer</li>
+        <li>Protected lock and idle plugins</li>
+      </ul></div>
+    </div>
+    <p class="note">Voxtype, its model, and its user service must already be installed and configured. The restore does not install packages or enable services. Personal shell plugins need upstream fixes and compatibility updates applied separately.</p>
+  </section>
+
+  <section id="sources">
+    <h2>Sources &amp; scope</h2>
+    <p>This inventory was checked against GitHub contributions under <code>ralphsmith80</code>, the local Omarchy feature branches, the dotfiles history, and the current Hyprland and Omarchy configuration.</p>
+    <p class="section-note">Terminal, tmux, and WirePlumber configuration were compared with installed defaults. They were not counted as personal modifications. Generic shell setup and unrelated application configuration are outside this inventory. Removed experiments without a surviving record may not appear here.</p>
+    <p class="section-note">Local paths identify source files on the original workstation. GitHub links and the screensaver review page are usable from other devices. This page does not update automatically.</p>
+  </section>
+  <footer>
+    <p>Canonical file in <a href="https://github.com/ralphsmith80/dotfiles">ralphsmith80/dotfiles</a>:<br><code>docs/plans/omarchy-modifications/index.html</code></p>
+    <p>Reference snapshot · September 14, 2026</p>
+  </footer>
+</main>
+</body>
+</html>
