@@ -62,7 +62,7 @@
     <div class="eyebrow">Personal desktop / Reference</div>
     <h1>My Omarchy<br>modifications</h1>
     <p class="intro">The changes to my desktop, the work shared upstream, and what I can restore on another machine.</p>
-    <p class="meta">Ralph Smith · GitHub: <a href="https://github.com/ralphsmith80">ralphsmith80</a><br>Verified <time datetime="2026-09-14">September 14, 2026</time>. PR statuses are a dated snapshot.</p>
+    <p class="meta">Ralph Smith · GitHub: <a href="https://github.com/r4lphio">r4lphio</a><br>Verified <time datetime="2026-09-14">September 14, 2026</time>. PR statuses are a dated snapshot. Links and restore steps updated <time datetime="2026-10-23">October 23, 2026</time>.</p>
   </header>
 
   <nav aria-label="On this page">
@@ -90,8 +90,8 @@
     </article>
 
     <article class="contribution">
-      <div class="topline"><span class="badge merged">Merged</span><span class="repo">ralphsmith80/dotfiles · #20</span></div>
-      <h3><a href="https://github.com/ralphsmith80/dotfiles/pull/20">Restore personal Omarchy overrides safely</a></h3>
+      <div class="topline"><span class="badge merged">Merged</span><span class="repo">r4lphio/dotfiles · #20</span></div>
+      <h3><a href="https://github.com/r4lphio/dotfiles/pull/20">Restore personal Omarchy overrides safely</a></h3>
       <p>Adds a separate restore command for tiling, keypad shortcuts, dictation, and optional monitor settings. Includes a verified plugin build, preview, backups, and rollback.</p>
       <p class="detail">A contribution to my dotfiles repository. This is not an upstream Omarchy PR.</p>
     </article>
@@ -113,7 +113,7 @@
         <h3>Equal window tiling</h3>
         <p>A patched hy3 layout keeps sibling windows equally sized. It rebalances when windows open, close, move between workspaces, or when the active workspace changes.</p>
         <p>A Hyprland version guard falls back to the stock layout if the plugin build does not match the running compositor.</p>
-        <p class="source">Saved source: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/hy3.patch">hy3.patch</a> and <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/config/hypr/dotfiles.lua">dotfiles.lua</a></p>
+        <p class="source">Saved source: the <a href="https://github.com/r4lphio/omarchy-equal-tiling">omarchy-equal-tiling</a> plugin and <a href="https://github.com/r4lphio/dotfiles/blob/main/omarchy/config/hypr/dotfiles.lua">dotfiles.lua</a></p>
       </div></article>
       <article class="change"><div>
         <h3>COSMIC-style directional movement</h3>
@@ -131,13 +131,13 @@
         <h3>Right Alt push-to-talk dictation</h3>
         <p>Hold Right Alt to record with Voxtype, then release to transcribe. Uses the English <code>base.en</code> model, pauses media, and types the result with clipboard fallback.</p>
         <p>Recordings can run for up to 120 seconds. Recording and transcription notifications are disabled.</p>
-        <p class="source">Saved source: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/config/voxtype/config.toml">Voxtype configuration</a></p>
+        <p class="source">Saved source: <a href="https://github.com/r4lphio/dotfiles/blob/main/omarchy/config/voxtype/config.toml">Voxtype configuration</a></p>
       </div></article>
       <article class="change"><div>
         <h3>Samsung ultrawide display setup</h3>
         <p>The Odyssey G95NC is configured for 7680×2160 at 240 Hz, with 1.2 desktop scaling and <code>GDK_SCALE=1</code>. It is matched by monitor description.</p>
         <p>The portable restore makes this hardware configuration optional.</p>
-        <p class="source">Saved source: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/config/hypr/monitors.lua">monitors.lua</a></p>
+        <p class="source">Saved source: <a href="https://github.com/r4lphio/dotfiles/blob/main/omarchy/config/hypr/monitors.lua">monitors.lua</a></p>
       </div></article>
       <article class="change"><div>
         <h3>Custom display panel</h3>
@@ -172,8 +172,8 @@
       <article class="change"><div>
         <h3>Portable Omarchy restore</h3>
         <p>Added <code>python3 script/omarchy.py</code> as a separate restore command. Preview is the default; <code>--apply</code> installs the saved overrides and <code>--with-hardware</code> includes monitor settings.</p>
-        <p><code>--build</code> downloads a pinned hy3 source revision, verifies its checksum, applies the patch, and compiles against local Hyprland headers. Restore includes backups, rollback, and checks for later local edits.</p>
-        <p class="source">Documentation: <a href="https://github.com/ralphsmith80/dotfiles/blob/main/omarchy/README.md">Personal Omarchy changes</a></p>
+        <p>After the files, <code>--apply</code> adds and enables the <code>ralphsmith80.equal-tiling</code> plugin. The plugin downloads a pinned hy3 source revision, verifies its checksum, applies the patch, and compiles against local Hyprland headers. Restore includes backups, rollback, and checks for later local edits.</p>
+        <p class="source">Documentation: <a href="https://github.com/r4lphio/dotfiles/blob/main/omarchy/README.md">Personal Omarchy changes</a></p>
       </div></article>
     </div>
   </section>
@@ -183,7 +183,7 @@
     <p class="section-note">The dotfiles command restores a subset of this inventory.</p>
     <div class="coverage">
       <div><h3>Saved in the restore</h3><ul>
-        <li>Equal tiling and the hy3 source patch</li>
+        <li>Equal tiling, through the equal-tiling plugin</li>
         <li>Directional movement and keypad shortcuts</li>
         <li>Right Alt binding and Voxtype configuration</li>
         <li>Optional Samsung monitor settings</li>
@@ -200,12 +200,12 @@
 
   <section id="sources">
     <h2>Sources &amp; scope</h2>
-    <p>This inventory was checked against GitHub contributions under <code>ralphsmith80</code>, the local Omarchy feature branches, the dotfiles history, and the current Hyprland and Omarchy configuration.</p>
+    <p>This inventory was checked against GitHub contributions under <code>ralphsmith80</code> (renamed <code>r4lphio</code> on October 23, 2026), the local Omarchy feature branches, the dotfiles history, and the current Hyprland and Omarchy configuration.</p>
     <p class="section-note">Terminal, tmux, and WirePlumber configuration were compared with installed defaults. They were not counted as personal modifications. Generic shell setup and unrelated application configuration are outside this inventory. Removed experiments without a surviving record may not appear here.</p>
     <p class="section-note">Local paths identify source files on the original workstation. GitHub links and the screensaver review page are usable from other devices. This page does not update automatically.</p>
   </section>
   <footer>
-    <p>Canonical file in <a href="https://github.com/ralphsmith80/dotfiles">ralphsmith80/dotfiles</a>:<br><code>docs/plans/omarchy-modifications/index.html</code></p>
+    <p>Canonical file in <a href="https://github.com/r4lphio/dotfiles">r4lphio/dotfiles</a>:<br><code>docs/plans/omarchy-modifications/index.html</code></p>
     <p>Reference snapshot · September 14, 2026</p>
   </footer>
 </main>
