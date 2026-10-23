@@ -1,7 +1,7 @@
 # Personal Omarchy changes
 
 This directory saves three configuration files. Equal tiling comes from the
-[omarchy-equal-tiling](https://github.com/ralphsmith80/omarchy-equal-tiling)
+[omarchy-equal-tiling](https://github.com/r4lphio/omarchy-equal-tiling)
 Omarchy plugin. The existing cross-platform bootstrap stays unchanged. This
 separate command requires Python 3.9 or newer and skips systems without
 Lua-configured Omarchy.

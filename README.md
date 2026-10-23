@@ -19,10 +19,10 @@ the equal tiling plugin, backups, and optional monitor settings.
 
 ```bash
 # One-liner — installs everything and checks out dotfiles
-curl -fsSL https://raw.githubusercontent.com/ralphsmith80/dotfiles/main/script/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/r4lphio/dotfiles/main/script/bootstrap.sh | bash
 
 # Zsh-only — checks out dotfiles, then installs Zsh, Starship, eza, and plugins
-curl -fsSL https://raw.githubusercontent.com/ralphsmith80/dotfiles/main/script/bootstrap.sh | bash -s -- --zsh-only
+curl -fsSL https://raw.githubusercontent.com/r4lphio/dotfiles/main/script/bootstrap.sh | bash -s -- --zsh-only
 ```
 
 `--zsh-only` limits the installer phases, but still checks out all tracked
@@ -33,7 +33,7 @@ has not been migrated to local overrides.
 Or clone and run locally:
 
 ```bash
-git clone https://github.com/ralphsmith80/dotfiles.git /tmp/dotfiles
+git clone https://github.com/r4lphio/dotfiles.git /tmp/dotfiles
 bash /tmp/dotfiles/script/bootstrap.sh
 ```
 
@@ -44,7 +44,7 @@ account, with Python 3.9+ and Git installed:
 
 ```bash
 # Once per account. Choose an unused directory for this clone.
-git clone https://github.com/ralphsmith80/dotfiles.git ~/dotfiles-source
+git clone https://github.com/r4lphio/dotfiles.git ~/dotfiles-source
 cd ~/dotfiles-source
 
 # Each update:

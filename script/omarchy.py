@@ -19,7 +19,7 @@ REPO = Path(__file__).resolve().parents[1]
 PROFILE = REPO / "omarchy"
 OMARCHY = Path(os.environ.get("OMARCHY_PATH", "/usr/share/omarchy"))
 PLUGIN_ID = "ralphsmith80.equal-tiling"
-PLUGIN_URL = "https://github.com/ralphsmith80/omarchy-equal-tiling"
+PLUGIN_URL = "https://github.com/r4lphio/omarchy-equal-tiling"
 
 
 def safe_path(root, relative):
