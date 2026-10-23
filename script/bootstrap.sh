@@ -8,15 +8,15 @@
 #   Phase 2: numbered scripts in $HOME/script/[0-9][0-9]-*.sh — sourced in order.
 #
 # Quick start (any fresh machine):
-#   curl -fsSL https://raw.githubusercontent.com/ralphsmith80/dotfiles/main/script/bootstrap.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/r4lphio/dotfiles/main/script/bootstrap.sh | bash
 # Zsh-only:
-#   curl -fsSL https://raw.githubusercontent.com/ralphsmith80/dotfiles/main/script/bootstrap.sh | bash -s -- --zsh-only
+#   curl -fsSL https://raw.githubusercontent.com/r4lphio/dotfiles/main/script/bootstrap.sh | bash -s -- --zsh-only
 # =============================================================================
 
 set -euo pipefail
 
-REPO_SSH="git@github.com:ralphsmith80/dotfiles.git"
-REPO_HTTPS="https://github.com/ralphsmith80/dotfiles.git"
+REPO_SSH="git@github.com:r4lphio/dotfiles.git"
+REPO_HTTPS="https://github.com/r4lphio/dotfiles.git"
 BOOTSTRAP_BRANCH="${BOOTSTRAP_BRANCH:-main}"
 GIT_DIR="$HOME/.cfg"
 WORK_TREE="$HOME"
